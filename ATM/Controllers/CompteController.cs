@@ -6,12 +6,13 @@ namespace ATM.Controllers
     public class CompteController : Controller
     {
         // GET: Compte
+
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Compte/Details/5
+        // Get CompteController/Details
         public ActionResult Details()
         {
             var verifCompte = new VerificationCompte

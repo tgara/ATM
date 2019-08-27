@@ -9,11 +9,11 @@ namespace ATM
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                          name: "Serial Number",
-                          url: "serial",
-                          defaults: new { controller = "Home", action = "Serial" }
-                      );
+            /* routes.MapRoute(
+                           name: "Serial Number",
+                           url: "serial",
+                           defaults: new { controller = "Home", action = "Serial" }
+                       );*/
 
             routes.MapRoute(
                 name: "Default",
