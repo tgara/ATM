@@ -1,42 +1,86 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - MVC distributeur Banque</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
+    <!-- SmartMenus core CSS (required) -->
+    <link href="../Content/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+    <!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+    <link href="../Content/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!-- YOU DO NOT NEED THIS - demo page content styles -->
+    <link href="../Content/libs/demo-assets/demo.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/libs/demo-assets/demo.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("MVC Banque", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <nav id="main-nav">
+        <!-- Sample menu definition -->
+        <ul id="main-menu" class="sm sm-blue">
+
+            <li>@Html.ActionLink("MVC Banque", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+
+            <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+            <li>
+                @Html.ActionLink("Contact", "Contact", "Home")
+            </li>
+           
+            @Html.Partial("_LoginPartial")
+        </ul>
+    </nav>
+
+
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("MVC Banque", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-fixed-top  ">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+        </div>*@
     <div class="container body-content">
+
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - MVC Banque - @Html.Action("serial","home", new {letterCase="lower"})</p>
+            <p>&copy; @DateTime.Now.Year - MVC Banque - @Html.Action("serial", "home", new { letterCase = "lower" })</p>
         </footer>
     </div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="../jquery.smartmenus.js"></script>
+
+    <!-- SmartMenus jQuery init -->
+    <script type="text/javascript">$(function() {
+    		$('#main-menu').smartmenus({
+    			subMenusSubOffsetX: 1,
+    			subMenusSubOffsetY: -8
+    		});
+    	});</script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

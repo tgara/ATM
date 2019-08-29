@@ -2,10 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-    <div class="jumbotron">
-
-        <img src="~/Content/Images/ATM.png" class="responsive"/>
-    </div>
+  
 <script src="https://kit.fontawesome.com/87669e0a28.js"></script>
 <div class="row">
     <div class="col-md-6 margin-top-20">
@@ -37,24 +34,3 @@
     {
     <script>var testing = true;</script>
 }
-@*
-    you are using @Request.Browser.Browser, and that is OK !!
-    @{var amounts = new List<Decimal> { 100, 25.50m, -40, 257.99m };}
-
-    <ul>
-        @foreach (decimal amount in amounts)
-        {
-            <li>@formatAmount(amount)</li>
-        }
-    </ul>
-
-    @helper formatAmount(decimal amount)
-    {
-        var color = "green";
-        if (amount < 0)
-        {
-            color = "red";
-        }
-        <span style="color:@color">@String.Format("{0:c}", amount)</span>
-    }
-*@
